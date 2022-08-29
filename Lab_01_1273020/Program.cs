@@ -14,12 +14,14 @@ namespace Lab_01_1273020
         static void Main(string[] args)
         {
             string a = "";
+            //string texto="";
+
             while(a=="") //Menú
             {
                 Console.WriteLine("****Menú****");
                 Console.WriteLine("1- Ingresar un archivo csv");
                 a= Console.ReadLine();
-
+                
             }
         }
     }
