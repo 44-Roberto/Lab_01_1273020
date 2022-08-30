@@ -73,9 +73,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Arbol_AVLBase.cs" />
-    <Compile Include="AVL.cs" />
-    <Compile Include="Nodo.cs" />
+    <Compile Include="Lista.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
