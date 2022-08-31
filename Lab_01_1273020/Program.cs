@@ -31,6 +31,7 @@ namespace Lab_01_1273020
 
             int a = 0;
             int b = 0;
+            int c = 0;
             while (!reader.EndOfStream)
             {
                 var lines = reader.ReadLine();
@@ -46,7 +47,8 @@ namespace Lab_01_1273020
                 }
                 else if ("PATCH" == values[0])
                 {
-
+                    c++;
+                    listaJSon.EditItem(personaN.name, personaN.dpi, personaN.dateBirth, personaN.address, personaN);
                 }
                 else if ("DELETE" == values[0])
                 {
@@ -59,29 +61,44 @@ namespace Lab_01_1273020
                 }
 
 
-               // list.Add(values[0]);//Accion
-               // list2.Add(values[1]);//
-
-               
-                
-                //listaJSon.Add_Lista(personaN);
-
             }
 
-
-            Console.WriteLine(a);
-            Console.WriteLine(b);
-            //Console.WriteLine(listaJSon.GetItem("pablo", "54136137918").name);
-            //Console.WriteLine(listaJSon.Get(1).name);
-
-            for (int i = 0; i < 278; i++)
+            Console.WriteLine("****Se realizó la lectura del archivo correctamente***");
+            Console.WriteLine("Se realizaron: "+a+" inserciones.");
+            Console.WriteLine("Se realizaron: "+b+" eliminaciones.");
+            Console.WriteLine("Se realizaron: "+c+" actualizaciones.");
+           
+           /* for (int i = 0; i < 278; i++)
             {
-                Console.WriteLine(listaJSon.Get(i).name+"  "+ listaJSon.Get(i).dpi);
+                Console.WriteLine(listaJSon.Get(i).name+"  "+ listaJSon.Get(i).dpi + "  " + listaJSon.Get(i).address);
                 
+
+            }*/
+
+            int llave = 0;
+            string nombreBus = "";//Variable de Nombre para realizar la busqueda
+            while(true)
+            {
+                Console.WriteLine("****  Menú  ***");
+                Console.WriteLine("1) Buscar registros por persona.");
+               Console.WriteLine("2) Salir.");
+                llave = Convert.ToInt16(Console.ReadLine());
+
+                if(llave == 1)
+                {
+                    //Busqueda
+                    Console.WriteLine("Ingrese el nombre:");
+                    nombreBus = Console.ReadLine();
+
+                                       
+                }
+                else if(llave == 2)
+                {
+                    Environment.Exit(0);
+                }
 
             }
 
-            
 
 
 
@@ -89,9 +106,7 @@ namespace Lab_01_1273020
 
 
 
-
-
-            Console.ReadKey();
+            //Console.ReadKey();
         }
     }
 }

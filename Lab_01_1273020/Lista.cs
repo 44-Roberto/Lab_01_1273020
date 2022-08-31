@@ -65,6 +65,30 @@ namespace Lab_01_1273020
 
         }
 
+        public void EditItem(string Name, string Dpi, string BD, string Address, T value)
+        {
+            nodo Temp = Header;
+
+            while (Temp.siguiente != null)
+            {
+                if ((Temp.name == Name) && (Temp.dpi == Dpi))
+                {
+                    Temp.valor = value;
+                    Temp.address = Address;                  
+                    Temp.dateBirth = BD;
+                      
+                    return; 
+                }
+                else
+                {
+                    Temp = Temp.siguiente;
+
+                }
+            }
+
+          
+        }
+
         public T Get(int pos)
         {
             nodo Temp = Header;
@@ -85,13 +109,13 @@ namespace Lab_01_1273020
             return Temp.valor;
         }
 
-        public T GetItem(string Name, string Dpi)
+        public T GetItem(string Name)
         {
             nodo Temp = Header;
            
             while (Temp.siguiente != null)
             {
-                if ((Temp.name == Name)&& (Temp.dpi == Dpi))
+                if ((Temp.name == Name))
                 {
                     return Temp.valor;
                 }
