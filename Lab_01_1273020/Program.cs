@@ -29,6 +29,8 @@ namespace Lab_01_1273020
             List<string> list2 = new List<string>();
             Lista<Persona> listaJSon = new Lista<Persona>();
 
+            int a = 0;
+            int b = 0;
             while (!reader.EndOfStream)
             {
                 var lines = reader.ReadLine();
@@ -39,6 +41,7 @@ namespace Lab_01_1273020
 
                 if ("INSERT" == values[0])
                 {
+                    a++;
                     listaJSon.Add_Lista(personaN.name, personaN.dpi,personaN.dateBirth,personaN.address, personaN);
                 }
                 else if ("PATCH" == values[0])
@@ -47,7 +50,8 @@ namespace Lab_01_1273020
                 }
                 else if ("DELETE" == values[0])
                 {
-
+                    b++;
+                    listaJSon.delete(personaN.name,personaN.dpi);
                 }
                 else
                 {
@@ -63,49 +67,21 @@ namespace Lab_01_1273020
                 //listaJSon.Add_Lista(personaN);
 
             }
-            
-            
 
+
+            Console.WriteLine(a);
+            Console.WriteLine(b);
             //Console.WriteLine(listaJSon.GetItem("pablo", "54136137918").name);
             //Console.WriteLine(listaJSon.Get(1).name);
-           
-            for(int i = 0; i < 50; i++)
+
+            for (int i = 0; i < 278; i++)
             {
                 Console.WriteLine(listaJSon.Get(i).name+"  "+ listaJSon.Get(i).dpi);
                 
 
             }
 
-            //int indice = 0;
-            /* foreach (var column1 in list)//Tengo los incisos
-             {
-
-                 if ("INSERT" == column1) 
-                 {
-                     listaJSon.Add_Lista()
-                 }
-                 else if ("PATCH"== column1)
-                 {
-
-                 }
-                 else if("DELETE"==column1)
-                 {
-
-                 }
-                 else
-                 {
-                     Console.WriteLine("nada xd");
-                 }
-
-
-                 Console.WriteLine(column1);
-             }
-
-             foreach (var column1 in list2)//Tengo los incisos
-             {
-                 Console.WriteLine(column1);
-             }
-            */
+            
 
 
 
