@@ -1,0 +1,17 @@
+Alumno: Roberto Alfredo Moya Noack
+Carné: 1273020
+
+		Recomendaciones
+
+-El realizar la busqueda por medio de nombre y apellido 
+reduce las repeticiones en la estructura de datos y mostrará 
+con más certeza a quién se está buscando.
+
+- Al momento de buscar, realizar la escritura del nombre
+con minusculas.
+
+-En la creación del proyecto no se tomó en cuenta la 
+busqueda de nombres y apellidos, por ende un apellido
+se tomará como un nombre largo. En ese caso, respetar los 
+espacios.
+
