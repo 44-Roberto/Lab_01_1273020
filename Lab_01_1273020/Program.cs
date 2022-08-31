@@ -67,13 +67,11 @@ namespace Lab_01_1273020
             Console.WriteLine("Se realizaron: "+a+" inserciones.");
             Console.WriteLine("Se realizaron: "+b+" eliminaciones.");
             Console.WriteLine("Se realizaron: "+c+" actualizaciones.");
-           
-           /* for (int i = 0; i < 278; i++)
-            {
-                Console.WriteLine(listaJSon.Get(i).name+"  "+ listaJSon.Get(i).dpi + "  " + listaJSon.Get(i).address);
-                
 
-            }*/
+            int nodosFinales = a - b;
+         
+
+            
 
             int llave = 0;
             string nombreBus = "";//Variable de Nombre para realizar la busqueda
@@ -81,7 +79,8 @@ namespace Lab_01_1273020
             {
                 Console.WriteLine("****  Menú  ***");
                 Console.WriteLine("1) Buscar registros por persona.");
-               Console.WriteLine("2) Salir.");
+                Console.WriteLine("2) Imprimir toda la lista.");
+                Console.WriteLine("3) Salir.");
                 llave = Convert.ToInt16(Console.ReadLine());
 
                 if(llave == 1)
@@ -90,9 +89,26 @@ namespace Lab_01_1273020
                     Console.WriteLine("Ingrese el nombre:");
                     nombreBus = Console.ReadLine();
 
-                                       
+                   for(int i = 0; i < nodosFinales; i++)
+                    {
+
+                        if(listaJSon.Get(i).name==nombreBus)
+                        {
+                            Console.WriteLine(i+"\t name: "+listaJSon.Get(i).name+ "\t dpi: "+listaJSon.Get(i).dpi+"\t dateBirth: "+ listaJSon.Get(i).dateBirth+ "\t address: " +listaJSon.Get(i).address);
+                        }
+                      
+                    }
+                    Console.WriteLine("No se encontró.");
+
                 }
                 else if(llave == 2)
+                {
+                    for (int i = 0; i < nodosFinales; i++)
+                    {
+                            Console.WriteLine(i + "\t name: " + listaJSon.Get(i).name + "\t dpi: " + listaJSon.Get(i).dpi + "\t dateBirth: " + listaJSon.Get(i).dateBirth + "\t address: " + listaJSon.Get(i).address); 
+                    }
+                }
+                else if(llave == 3)
                 {
                     Environment.Exit(0);
                 }

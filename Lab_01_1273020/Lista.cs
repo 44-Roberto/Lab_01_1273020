@@ -115,7 +115,7 @@ namespace Lab_01_1273020
            
             while (Temp.siguiente != null)
             {
-                if ((Temp.name == Name))
+                if (Temp.name == Name)
                 {
                     return Temp.valor;
                 }
@@ -128,6 +128,9 @@ namespace Lab_01_1273020
 
             return Temp.valor;
         }
+       
+
+
 
         public void delete(string Name, string Dpi)
         {
