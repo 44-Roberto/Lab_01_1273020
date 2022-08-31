@@ -73,12 +73,12 @@ namespace Lab_01_1273020
             string LugarArchivoSalida = @"C:\Users\Roberto Moya\Desktop\Lab1-E2\Lab_01_1273020\Lab_01_1273020\bin\Debug\DocSalida.csv";
 
 
-
+           
             int llave = 0;
             string nombreBus = "";//Variable de Nombre para realizar la busqueda
             while(true)
             {
-                Console.WriteLine("****  Menú  ***");
+                Console.WriteLine("\n\n****  Menú  ***");
                 Console.WriteLine("1) Buscar registros por persona.");
                 Console.WriteLine("2) Imprimir toda la lista.");
                 Console.WriteLine("3) Salir.");
@@ -86,6 +86,7 @@ namespace Lab_01_1273020
 
                 if(llave == 1)
                 {
+                    int varaux = 0;
                     //Busqueda
                     Console.WriteLine("Ingrese el nombre:");
                     nombreBus = Console.ReadLine();
@@ -95,13 +96,18 @@ namespace Lab_01_1273020
 
                         if(listaJSon.Get(i).name==nombreBus)
                         {
+                            varaux++;
                             Console.WriteLine(i+"\t name: "+listaJSon.Get(i).name+ "\t dpi: "+listaJSon.Get(i).dpi+"\t dateBirth: "+ listaJSon.Get(i).dateBirth+ "\t address: " +listaJSon.Get(i).address);
                             string jsonSalida = JsonSerializer.Serialize(listaJSon.Get(i));
                             File.AppendAllText(LugarArchivoSalida, "\n" +jsonSalida);
                         }
                        
                     }
-                    Console.WriteLine("No se encontró.");
+                   if(varaux == 0)
+                    {
+                        Console.WriteLine("No se encontró.");
+                    }
+                   
 
                 }
                 else if(llave == 2)
