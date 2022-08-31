@@ -11,8 +11,8 @@ namespace Lab_01_1273020
 
     class Lista<T> //where T : IComparable<T>
     {
-
-        public class nodo : Persona
+        //Creo mi nodo  
+        public class nodo : Persona//Heredo de mi clase persona
         {
 
 
@@ -29,24 +29,27 @@ namespace Lab_01_1273020
         nodo Header = new nodo();
 
 
-        public Lista()
+        public Lista()//Instancio mi Head como null
         {
             Header = null;
 
         }
 
-
+        //Metodo para añadir a la lista
         public void Add_Lista(string Name, string Dpi, string BD, string Address, T value)
         {
+            //Instancio variables auxiliares
             nodo nuevoNodo = new nodo();
             nodo Temp = Header;
 
+            //Guardo los valores en mi nodo
             nuevoNodo.valor = value;
             nuevoNodo.name=Name;
             nuevoNodo.dpi = Dpi;
             nuevoNodo.address=Address;
             nuevoNodo.dateBirth = BD;
 
+            //Añado el nodo a la lista
             if (Header == null)
             {
                 Header = nuevoNodo;
@@ -65,13 +68,14 @@ namespace Lab_01_1273020
 
         }
 
+        //Metodo para actualizar los datos
         public void EditItem(string Name, string Dpi, string BD, string Address, T value)
         {
             nodo Temp = Header;
 
-            while (Temp.siguiente != null)
+            while (Temp.siguiente != null)//Se recorre el nodo
             {
-                if ((Temp.name == Name) && (Temp.dpi == Dpi))
+                if ((Temp.name == Name) && (Temp.dpi == Dpi))//Si el nombre y el dpi coinciden
                 {
                     Temp.valor = value;
                     Temp.address = Address;                  
@@ -89,7 +93,7 @@ namespace Lab_01_1273020
           
         }
 
-        public T Get(int pos)
+        public T Get(int pos)//Metodo que me permite obtener el T en una posición especifica de la lista
         {
             nodo Temp = Header;
             int auxPos = 0;
@@ -109,7 +113,9 @@ namespace Lab_01_1273020
             return Temp.valor;
         }
 
-        public T GetItem(string Name)
+
+        //No se utiliza
+        public T GetItem(string Name)//Metodo que me devuelve el T por medio del nombre
         {
             nodo Temp = Header;
            
@@ -131,7 +137,7 @@ namespace Lab_01_1273020
        
 
 
-
+        //Metodo de eliminacion por medio de la busqueda por nombre y dpi
         public void delete(string Name, string Dpi)
         {
 
@@ -141,9 +147,9 @@ namespace Lab_01_1273020
 
             while(Temp!= null)
             {
-                if( (Temp.name == Name)&&(Temp.dpi == Dpi))
+                if( (Temp.name == Name)&&(Temp.dpi == Dpi))//Si el nombre y dpi coinciden
                 {
-                    aux.siguiente = Temp.siguiente;
+                    aux.siguiente = Temp.siguiente;//Se deja fuera el nodo
                     return;
                 }
                 else
