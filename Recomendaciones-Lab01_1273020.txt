@@ -7,6 +7,8 @@ Carné: 1273020
 reduce las repeticiones en la estructura de datos y mostrará 
 con más certeza a quién se está buscando.
 
+-Manejar el apellido como una variable aparte.
+
 - Al momento de buscar, realizar la escritura del nombre
 con minusculas.
 
