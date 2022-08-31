@@ -69,9 +69,10 @@ namespace Lab_01_1273020
             Console.WriteLine("Se realizaron: "+c+" actualizaciones.");
 
             int nodosFinales = a - b;
-         
 
-            
+            string LugarArchivoSalida = @"C:\Users\Roberto Moya\Desktop\Lab1-E2\Lab_01_1273020\Lab_01_1273020\bin\Debug\DocSalida.csv";
+
+
 
             int llave = 0;
             string nombreBus = "";//Variable de Nombre para realizar la busqueda
@@ -95,8 +96,10 @@ namespace Lab_01_1273020
                         if(listaJSon.Get(i).name==nombreBus)
                         {
                             Console.WriteLine(i+"\t name: "+listaJSon.Get(i).name+ "\t dpi: "+listaJSon.Get(i).dpi+"\t dateBirth: "+ listaJSon.Get(i).dateBirth+ "\t address: " +listaJSon.Get(i).address);
+                            string jsonSalida = JsonSerializer.Serialize(listaJSon.Get(i));
+                            File.AppendAllText(LugarArchivoSalida, "\n" +jsonSalida);
                         }
-                      
+                       
                     }
                     Console.WriteLine("No se encontró.");
 
