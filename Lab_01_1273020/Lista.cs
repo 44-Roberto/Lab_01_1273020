@@ -47,7 +47,7 @@ namespace Lab_01_1273020
             nuevoNodo.name=Name;
             nuevoNodo.dpi = Dpi;
             nuevoNodo.address=Address;
-            nuevoNodo.dateBirth = BD;
+            nuevoNodo.datebirth = BD;
 
             //Añado el nodo a la lista
             if (Header == null)
@@ -79,7 +79,7 @@ namespace Lab_01_1273020
                 {
                     Temp.valor = value;
                     Temp.address = Address;                  
-                    Temp.dateBirth = BD;
+                    Temp.datebirth = BD;
                       
                     return; 
                 }

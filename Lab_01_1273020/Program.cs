@@ -14,7 +14,7 @@ namespace Lab_01_1273020
       //Atributos de mi clase persona
         public string name { get; set; }    //Nombre    
         public string dpi { get; set; }     //DPI
-        public string dateBirth { get; set; }//Fecha de nacimiento
+        public string datebirth { get; set; }//Fecha de nacimiento
         public string address { get; set; } //Dirección(localidad)
 
     }
@@ -26,7 +26,7 @@ namespace Lab_01_1273020
         {
             //Comienza el procedimiento de lectura del archivo
             //************* SE DEBE DE INSERTAR LA DIRECCIÓN DEL ARCHIVO***************
-            var reader = new StreamReader(File.OpenRead(@"C:\Users\Roberto Moya\Desktop\Lab1-E2\Lab_01_1273020\Lab_01_1273020\bin\Debug\Prueba.csv"));
+            var reader = new StreamReader(File.OpenRead(@"C:\Users\Roberto Moya\Desktop\Lab1-E2\Lab_01_1273020\Lab_01_1273020\bin\Debug\archivo.csv"));
            // List<string> list = new List<string>(); Listas que utilicé para pruebas pero no se utilizan
            // List<string> list2 = new List<string>();
             Lista<Persona> listaJSon = new Lista<Persona>(); //Instancio mi Lista para guardar los archivos del JSon
@@ -49,13 +49,13 @@ namespace Lab_01_1273020
                 if ("INSERT" == values[0]) //Si es "INSERT" insertará en la List para el json
                 {
                     a++;//Sumo en 1 el contador cuando se inserte un elemento a la lista
-                    listaJSon.Add_Lista(personaN.name, personaN.dpi,personaN.dateBirth,personaN.address, personaN);//Llamada a añadir a la lista
+                    listaJSon.Add_Lista(personaN.name, personaN.dpi,personaN.datebirth,personaN.address, personaN);//Llamada a añadir a la lista
                 }
                 else if ("PATCH" == values[0])//Si es "Patch" actualizará en la lista
                 {
                    //Sumo en 1 el contador cuando se actualice un elemento a la lista
                     c++;
-                    listaJSon.EditItem(personaN.name, personaN.dpi, personaN.dateBirth, personaN.address, personaN);//Lamada a editar
+                    listaJSon.EditItem(personaN.name, personaN.dpi, personaN.datebirth, personaN.address, personaN);//Lamada a editar
                 }
                 else if ("DELETE" == values[0])//Si es "DELETE" eliminará el elemento deseado en la lista
                 {
@@ -110,7 +110,7 @@ namespace Lab_01_1273020
                         {
                             varaux++;//Incremento mi auxiliar si encontró la persona
                             //Escribo en consola la paersona buscada
-                            Console.WriteLine(i+"\t name: "+listaJSon.Get(i).name+ "\t dpi: "+listaJSon.Get(i).dpi+"\t dateBirth: "+ listaJSon.Get(i).dateBirth+ "\t address: " +listaJSon.Get(i).address);
+                            Console.WriteLine(i+"\t name: "+listaJSon.Get(i).name+ "\t dpi: "+listaJSon.Get(i).dpi+"\t dateBirth: "+ listaJSon.Get(i).datebirth+ "\t address: " +listaJSon.Get(i).address);
                             string jsonSalida = JsonSerializer.Serialize(listaJSon.Get(i));//Vuelvo a serializarlo en un jSon
                             File.AppendAllText(LugarArchivoSalida, "\n" +jsonSalida);//Se realiza la escritura de salida en otro archivo
                         }
@@ -127,7 +127,7 @@ namespace Lab_01_1273020
                 {
                     for (int i = 0; i < nodosFinales; i++)//Imprimo todos las personas ingresadas en la lista
                     {
-                            Console.WriteLine(i + "\t name: " + listaJSon.Get(i).name + "\t dpi: " + listaJSon.Get(i).dpi + "\t dateBirth: " + listaJSon.Get(i).dateBirth + "\t address: " + listaJSon.Get(i).address); 
+                            Console.WriteLine(i + "\t name: " + listaJSon.Get(i).name + "\t dpi: " + listaJSon.Get(i).dpi + "\t dateBirth: " + listaJSon.Get(i).datebirth + "\t address: " + listaJSon.Get(i).address); 
                     }
                 }
                 else if(llave == 3)
